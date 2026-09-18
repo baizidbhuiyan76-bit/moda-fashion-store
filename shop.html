@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | MODA</title>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ========================= HEADER ========================= -->
+    <header class="header">
+        <div class="header-main">
+            <!-- Mobile Menu Button (Required for JS) -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <a href="index.html" class="logo">MODA<span>.</span></a>
+            <nav class="desktop-nav">
+                <a href="index.html">Home</a>
+                <a href="shop.html" class="active-nav">Shop</a>
+                <a href="cart.html">Cart</a>
+            </nav>
+            <div class="header-actions">
+                <!-- Search Button (Required for JS) -->
+                <button class="header-icon" id="searchBtn" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+               <a href="wishlist.html" class="header-icon wishlist-header" aria-label="Wishlist">
+    <i class="fa-regular fa-heart"></i>
+    <span class="header-count wishlist-count">0</span>
+</a>
+                <button class="header-icon cart-header" id="cartBtn" aria-label="Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="header-count cart-count">0</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation (Required for JS) -->
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+        
+        <!-- Search Box (Required for JS) -->
+        <div class="search-area" id="searchArea">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search products...">
+                <button id="searchSubmit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================= SHOP HERO ========================= -->
+    <section class="shop-hero">
+        <div class="shop-hero-content">
+            <p class="eyebrow" style="color: white;">COLLECTIONS</p>
+            <h1 id="shopHeroTitle">All Products</h1>
+            <p id="shopHeroDescription">Discover premium fashion pieces carefully selected for your style.</p>
+        </div>
+    </section>
+
+    <!-- ========================= SHOP MAIN ========================= -->
+    <main class="shop-container">
+        <!-- Top Bar with Search and Sort -->
+        <div class="shop-topbar">
+            <p class="shop-result-text">Showing <strong id="productCount">0</strong> results</p>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                <input type="text" id="shopSearchInput" placeholder="Search products..." style="padding: 10px 15px; border: 1px solid #ddd; outline: none; font-family: inherit;">
+                <div class="shop-sort">
+                    <select id="sortProducts">
+                        <option value="default">Default Sorting</option>
+                        <option value="newest">Newest Arrivals</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Top Rated</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="shop-layout">
+            <!-- FILTER SIDEBAR -->
+            <aside class="filter-sidebar" id="filterSidebar">
+                <div class="filter-header">
+                    <h2>Filters</h2>
+                    <button id="closeFilters"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <!-- Categories -->
+                <div class="filter-group">
+                    <h3>Categories</h3>
+                    <label class="filter-option"><input type="radio" name="category" value="all" class="category-filter" checked> All Products</label>
+                    <label class="filter-option"><input type="radio" name="category" value="men" class="category-filter"> Men's Collection</label>
+                    <label class="filter-option"><input type="radio" name="category" value="women" class="category-filter"> Women's Collection</label>
+                    <label class="filter-option"><input type="radio" name="category" value="kids" class="category-filter"> Kids Collection</label>
+                    <label class="filter-option"><input type="radio" name="category" value="accessories" class="category-filter"> Accessories</label>
+                </div>
+                <!-- Prices -->
+                <div class="filter-group">
+                    <h3>Price Range</h3>
+                    <label class="filter-option"><input type="radio" name="price" value="all" class="price-filter" checked> All Prices</label>
+                    <label class="filter-option"><input type="radio" name="price" value="0-1500" class="price-filter"> Under ৳1,500</label>
+                    <label class="filter-option"><input type="radio" name="price" value="1500-2500" class="price-filter"> ৳1,500 - ৳2,500</label>
+                    <label class="filter-option"><input type="radio" name="price" value="2500-4000" class="price-filter"> ৳2,500 - ৳4,000</label>
+                    <label class="filter-option"><input type="radio" name="price" value="4000+" class="price-filter"> Over ৳4,000</label>
+                </div>
+                <button id="clearFilters" class="clear-filters">Clear All Filters</button>
+            </aside>
+
+            <!-- PRODUCT GRID -->
+            <div class="products-area">
+                <button class="mobile-filter-btn" id="openFilters">
+                    <i class="fa-solid fa-sliders"></i> Filter & Sort
+                </button>
+                
+                <div class="shop-product-grid" id="shopProductGrid">
+                    <!-- Products will load here dynamically from script.js -->
+                </div>
+                
+                <div class="no-products" id="noProducts" style="display: none;">
+                    <i class="fa-solid fa-box-open"></i>
+                    <h3>No Products Found</h3>
+                    <p>Try adjusting your filters or search terms.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ========================= CART SIDEBAR (REQUIRED FOR JS) ========================= -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button id="closeCart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Subtotal</span>
+                <strong id="cartTotal">৳0</strong>
+            </div>
+            <a href="checkout.html" class="checkout-btn" style="display:flex; justify-content:center; align-items:center; text-decoration:none;">Proceed to Checkout</a>
+        </div>
+    </aside>
+
+    <!-- ========================= TOAST ========================= -->
+    <div class="toast" id="toast">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastMessage"></span>
+    </div>
+<!-- ========================= IMAGE LIGHTBOX ========================= -->
+    <div class="product-lightbox" id="productLightbox">
+        <button id="closeLightbox" style="color: black;"><i class="fa-solid fa-xmark"></i></button>
+        <img src="" alt="Quick View" id="lightboxImage">
+    </div>
+    <!-- JS -->
+     
+    <script src="script.js"></script>
+</body>
+</html>

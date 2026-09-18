@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MODA | Premium Fashion Store</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================
+     ANNOUNCEMENT BAR
+========================= -->
+<div class="announcement-bar">
+    <div class="announcement-inner">
+        <span>FREE SHIPPING ON ORDERS OVER ৳2,000</span>
+        <span class="announcement-separator">|</span>
+        <span>NEW SEASON COLLECTION IS HERE</span>
+    </div>
+</div>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+<header class="header">
+
+    <div class="header-main">
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <a href="#" class="logo">
+            MODA<span>.</span>
+        </a>
+
+        <nav class="desktop-nav">
+            <a href="#home">Home</a>
+            <a href="#categories">Shop</a>
+            <a href="shop.html?category=men">Men</a>
+            <a href="#women">Women</a>
+            <a href="#new-arrivals">New Arrivals</a>
+            <a href="#sale">Sale</a>
+        </nav>
+
+        <div class="header-actions">
+
+            <button class="header-icon" id="searchBtn" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <button class="header-icon" aria-label="Account">
+                <i class="fa-regular fa-user"></i>
+            </button>
+
+            <button class="header-icon wishlist-header" aria-label="Wishlist">
+                <i class="fa-regular fa-heart"></i>
+                <span class="header-count wishlist-count">0</span>
+            </button>
+
+            <button class="header-icon cart-header" id="cartBtn" aria-label="Cart">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="header-count cart-count">0</span>
+            </button>
+
+        </div>
+    </div>
+
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="#home">Home</a>
+        <a href="#categories">Shop</a>
+        <a href="shop.html?category=men">Men</a>
+        <a href="#women">Women</a>
+        <a href="#new-arrivals">New Arrivals</a>
+        <a href="#sale">Sale</a>
+    </nav>
+
+
+    <!-- Search Box -->
+    <div class="search-area" id="searchArea">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search products...">
+            <button id="searchSubmit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+    </div>
+
+</header>
+
+
+<main id="home">
+
+<!-- =========================
+     HERO SECTION
+========================= -->
+<section class="hero">
+
+    <div class="hero-image"></div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <p class="hero-small-title">NEW SEASON 2026</p>
+
+        <h1>
+            Style That<br>
+            Speaks <em>For You.</em>
+        </h1>
+
+        <p class="hero-description">
+            Discover timeless fashion pieces designed
+            for your everyday confidence.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#categories" class="btn btn-light">
+                Shop Collection
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="#new-arrivals" class="hero-link">
+                Explore New Arrivals
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CATEGORY SECTION
+========================= -->
+<section class="section" id="categories">
+
+    <div class="section-heading">
+
+        <div>
+            <p class="eyebrow">EXPLORE</p>
+            <h2>Shop by Category</h2>
+        </div>
+
+        <a href="shop.html" class="view-all">
+            View All <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+<div class="category-grid">
+        <a href="shop.html?category=men" class="category-card">
+            <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=900&q=85"
+                 alt="Men's Collection">
+            <div class="category-info">
+                <span>01</span>
+                <h3>Men's Collection</h3>
+                <p>Explore Collection <i class="fa-solid fa-arrow-right"></i></p>
+            </div>
+        </a>
+        <a href="shop.html?category=women" class="category-card">
+            <img src="woman.jpg"
+                 alt="Women's Collection">
+            <div class="category-info">
+                <span>02</span>
+                <h3>Women's Collection</h3>
+                <p>Explore Collection <i class="fa-solid fa-arrow-right"></i></p>
+            </div>
+        </a>
+        <a href="shop.html?category=kids" class="category-card">
+            <img src="images/kids collection.jpg"
+                 alt="Kids Collection">
+            <div class="category-info">
+                <span>03</span>
+                <h3>Kids Collection</h3>
+                <p>Explore Collection <i class="fa-solid fa-arrow-right"></i></p>
+            </div>
+        </a>
+        <a href="shop.html?category=accessories" class="category-card">
+            <img src="images/Accesories.jpg"
+                 alt="Accessories">
+            <div class="category-info">
+                <span>04</span>
+                <h3>Accessories</h3>
+                <p>Explore Collection <i class="fa-solid fa-arrow-right"></i></p>
+            </div>
+        </a>
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FLASH SALE
+========================= -->
+<section class="sale-section" id="sale">
+
+    <div class="sale-content">
+
+        <p class="eyebrow">LIMITED TIME OFFER</p>
+
+        <h2>Flash Sale</h2>
+
+        <p>
+            Upgrade your wardrobe with our selected
+            pieces at special prices.
+        </p>
+
+        <div class="countdown">
+
+            <div class="time-box">
+                <strong id="days">02</strong>
+                <span>Days</span>
+            </div>
+
+            <div class="time-box">
+                <strong id="hours">12</strong>
+                <span>Hours</span>
+            </div>
+
+            <div class="time-box">
+                <strong id="minutes">45</strong>
+                <span>Minutes</span>
+            </div>
+
+            <div class="time-box">
+                <strong id="seconds">20</strong>
+                <span>Seconds</span>
+            </div>
+
+        </div>
+
+       <a href="shop.html" class="btn btn-dark">
+    Shop Sale <i class="fa-solid fa-arrow-right"></i>
+</a>
+
+    </div>
+
+
+    <div class="sale-image">
+        <img src="images/time..e.jpg"
+             alt="Flash Sale">
+    </div>
+
+</section>
+
+
+<!-- =========================
+     BEST SELLING PRODUCTS
+========================= -->
+<section class="section products-section">
+
+    <div class="section-heading">
+
+        <div>
+            <p class="eyebrow">OUR FAVORITES</p>
+            <h2>Best Selling</h2>
+        </div>
+
+        <a href="shop.html" class="view-all">
+            Shop All <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="product-grid">
+
+
+        <!-- Product 1 -->
+        <article class="product-card">
+
+            <div class="product-image">
+
+                <span class="product-badge">BEST SELLER</span>
+
+                <button class="product-wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+
+                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=85"
+                     alt="Classic Cotton T-Shirt">
+
+                <button class="quick-view">Quick View</button>
+
+            </div>
+
+            <div class="product-info">
+
+                <p class="product-category">MEN'S WEAR</p>
+
+                <h3>Classic Cotton T-Shirt</h3>
+
+                <div class="product-rating">
+                    <span>★★★★★</span>
+                    <small>(24)</small>
+                </div>
+
+                <div class="product-price">
+                    <strong>৳1,290</strong>
+                    <del>৳1,590</del>
+                </div>
+
+                <button class="add-cart" data-product="Classic Cotton T-Shirt">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- Product 2 -->
+        <article class="product-card">
+
+            <div class="product-image">
+
+                <span class="product-badge sale-badge">-25%</span>
+
+                <button class="product-wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+
+                <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=85"
+                     alt="Premium Denim Jacket">
+
+                <button class="quick-view">Quick View</button>
+
+            </div>
+
+            <div class="product-info">
+
+                <p class="product-category">MEN'S WEAR</p>
+
+                <h3>Premium Denim Jacket</h3>
+
+                <div class="product-rating">
+                    <span>★★★★★</span>
+                    <small>(18)</small>
+                </div>
+
+                <div class="product-price">
+                    <strong>৳2,990</strong>
+                    <del>৳3,990</del>
+                </div>
+
+                <button class="add-cart" data-product="Premium Denim Jacket">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- Product 3 -->
+        <article class="product-card">
+
+            <div class="product-image">
+
+                <button class="product-wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+
+                <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=85"
+                     alt="Elegant Women's Dress">
+
+                <button class="quick-view">Quick View</button>
+
+            </div>
+
+            <div class="product-info">
+
+                <p class="product-category">WOMEN'S WEAR</p>
+
+                <h3>Elegant Everyday Dress</h3>
+
+                <div class="product-rating">
+                    <span>★★★★★</span>
+                    <small>(31)</small>
+                </div>
+
+                <div class="product-price">
+                    <strong>৳2,490</strong>
+                </div>
+
+                <button class="add-cart" data-product="Elegant Everyday Dress">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- Product 4 -->
+        <article class="product-card">
+
+            <div class="product-image">
+
+                <span class="product-badge">NEW</span>
+
+                <button class="product-wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+
+                <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=800&q=85"
+                     alt="Relaxed Fit Shirt">
+
+                <button class="quick-view">Quick View</button>
+
+            </div>
+
+            <div class="product-info">
+
+                <p class="product-category">MEN'S WEAR</p>
+
+                <h3>Relaxed Fit Linen Shirt</h3>
+
+                <div class="product-rating">
+                    <span>★★★★★</span>
+                    <small>(15)</small>
+                </div>
+
+                <div class="product-price">
+                    <strong>৳1,890</strong>
+                </div>
+
+                <button class="add-cart" data-product="Relaxed Fit Linen Shirt">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MEN COLLECTION
+========================= -->
+<section class="collection-banner" id="men">
+
+    <img src="https://images.unsplash.com/photo-1610652492500-ded49ceeb378?auto=format&fit=crop&w=1800&q=85"
+         alt="Men's Fashion">
+
+    <div class="collection-overlay"></div>
+
+    <div class="collection-content">
+
+        <p class="eyebrow light">MEN'S COLLECTION</p>
+
+        <h2>Effortless.<br><em>Confident.</em></h2>
+
+        <p>
+            Modern essentials designed for
+            the man who knows his style.
+        </p>
+
+        <a href="shop.html?category=men" class="...">Shop Men <i class="fa-solid fa-arrow-right"></i></a>
+      
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     NEW ARRIVALS
+========================= -->
+<section class="section" id="new-arrivals">
+
+    <div class="section-heading">
+
+        <div>
+            <p class="eyebrow">JUST DROPPED</p>
+            <h2>New Arrivals</h2>
+        </div>
+
+<a href="shop.html" class="view-all-link">View All <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+
+    <div class="product-grid">
+
+        <article class="product-card">
+
+            <div class="product-image">
+
+                <span class="product-badge">NEW</span>
+
+                <button class="product-wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+
+                <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=85"
+                     alt="Women's New Collection">
+
+                <button class="quick-view">Quick View</button>
+
+            </div>
+
+            <div class="product-info">
+
+                <p class="product-category">WOMEN'S WEAR</p>
+                <h3>Minimal Summer Set</h3>
+
+                <div class="product-rating">
+                    <span>★★★★★</span>
+                    <small>(9)</small>
+                </div>
+
+                <div class="product-price">
+                    <strong>৳2,790</strong>
+                </div>
+
+                <button class="add-cart" data-product="Minimal Summer Set">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <article class="product-card">
+
+            <div class="product-image">
+
+                <button class="product-wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+
+                <img src="https://images.unsplash.com/photo-1627225924765-552d49cf47ad?auto=format&fit=crop&w=800&q=85"
+                     alt="Oversized T-Shirt">
+
+                <button class="quick-view">Quick View</button>
+
+            </div>
+
+            <div class="product-info">
+
+                <p class="product-category">MEN'S WEAR</p>
+                <h3>Oversized Essential Tee</h3>
+
+                <div class="product-rating">
+                    <span>★★★★★</span>
+                    <small>(12)</small>
+                </div>
+
+                <div class="product-price">
+                    <strong>৳1,490</strong>
+                </div>
+
+                <button class="add-cart" data-product="Oversized Essential Tee">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <article class="product-card">
+
+            <div class="product-image">
+
+                <span class="product-badge">NEW</span>
+
+                <button class="product-wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+
+                <img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=800&q=85"
+                     alt="Women's Blouse">
+
+                <button class="quick-view">Quick View</button>
+
+            </div>
+
+            <div class="product-info">
+
+                <p class="product-category">WOMEN'S WEAR</p>
+                <h3>Soft Satin Blouse</h3>
+
+                <div class="product-rating">
+                    <span>★★★★★</span>
+                    <small>(20)</small>
+                </div>
+
+                <div class="product-price">
+                    <strong>৳1,990</strong>
+                </div>
+
+                <button class="add-cart" data-product="Soft Satin Blouse">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <article class="product-card">
+
+            <div class="product-image">
+
+                <button class="product-wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=85"
+                     alt="Fashion Outfit">
+
+                <button class="quick-view">Quick View</button>
+
+            </div>
+
+            <div class="product-info">
+
+                <p class="product-category">WOMEN'S WEAR</p>
+                <h3>Classic Tailored Outfit</h3>
+
+                <div class="product-rating">
+                    <span>★★★★★</span>
+                    <small>(14)</small>
+                </div>
+
+                <div class="product-price">
+                    <strong>৳3,290</strong>
+                </div>
+
+                <button class="add-cart" data-product="Classic Tailored Outfit">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     WOMEN COLLECTION
+========================= -->
+<section class="split-collection" id="women">
+
+    <div class="split-image">
+        <img src="woman.jpg"
+             alt="Women's Fashion">
+    </div>
+
+    <div class="split-content">
+
+        <p class="eyebrow">WOMEN'S COLLECTION</p>
+
+        <h2>Designed to<br><em>Stand Out.</em></h2>
+
+        <p>
+            Discover refined silhouettes, effortless
+            essentials and statement pieces made
+            for every moment.
+        </p>
+
+        <a href="shop.html?category=women" class="text-button">
+            Explore Women's Collection
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     WHY CHOOSE US
+========================= -->
+<section class="features-section">
+
+    <div class="section-heading centered">
+
+        <div>
+            <p class="eyebrow">THE MODA PROMISE</p>
+            <h2>Why Choose Us</h2>
+        </div>
+
+    </div>
+
+
+    <div class="features-grid">
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                <i class="fa-solid fa-gem"></i>
+            </div>
+
+            <h3>Premium Quality</h3>
+
+            <p>
+                Carefully selected fabrics and
+                quality craftsmanship.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                <i class="fa-solid fa-truck-fast"></i>
+            </div>
+
+            <h3>Fast Delivery</h3>
+
+            <p>
+                Reliable delivery service across
+                Bangladesh.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                <i class="fa-solid fa-rotate-left"></i>
+            </div>
+
+            <h3>Easy Returns</h3>
+
+            <p>
+                Simple return process for
+                your peace of mind.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+
+            <h3>Customer Support</h3>
+
+            <p>
+                Our support team is always
+                ready to help you.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     REVIEWS
+========================= -->
+<section class="reviews-section">
+
+    <div class="section-heading">
+
+        <div>
+            <p class="eyebrow">CUSTOMER LOVE</p>
+            <h2>What Our Customers Say</h2>
+        </div>
+
+    </div>
+
+
+    <div class="review-grid">
+
+        <div class="review-card">
+
+            <div class="review-stars">★★★★★</div>
+
+            <p>
+                “The quality is even better than I expected.
+                The fabric feels premium and the fitting
+                is perfect.”
+            </p>
+
+            <div class="review-author">
+                <div class="author-avatar">S</div>
+                <div>
+                    <strong>Sarah Ahmed</strong>
+                    <span>Verified Customer</span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="review-card">
+
+            <div class="review-stars">★★★★★</div>
+
+            <p>
+                “Beautiful products, fast delivery and
+                excellent packaging. Definitely ordering
+                again!”
+            </p>
+
+            <div class="review-author">
+                <div class="author-avatar">R</div>
+                <div>
+                    <strong>Rahim Hasan</strong>
+                    <span>Verified Customer</span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="review-card">
+
+            <div class="review-stars">★★★★★</div>
+
+            <p>
+                “I loved the minimal design and the
+                clothes look exactly like the pictures.
+                Highly recommended.”
+            </p>
+
+            <div class="review-author">
+                <div class="author-avatar">N</div>
+                <div>
+                    <strong>Nusrat Jahan</strong>
+                    <span>Verified Customer</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     BLOG
+========================= -->
+<section class="section blog-section">
+
+    <div class="section-heading">
+
+        <div>
+            <p class="eyebrow">STYLE JOURNAL</p>
+            <h2>From the Blog</h2>
+        </div>
+
+        <a href="#" class="view-all">
+            Read All <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="blog-grid">
+
+        <article class="blog-card">
+
+            <div class="blog-image">
+
+                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=85"
+                     alt="Fashion Trends">
+
+            </div>
+
+            <div class="blog-info">
+
+                <span>FASHION • 05 SEP 2026</span>
+
+                <h3>
+                    7 Fashion Essentials Every Wardrobe Needs
+                </h3>
+
+                <a href="https://sorchae.com/blogs/news/7-wardrobe-essentials-every-modern-woman-needs?srsltid=AU7gw4Xib8_0es6xyFPznLT7Jq5wEsngWC4RmRnGCJNImkl-WgNO5M27">
+                    Read Article <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <article class="blog-card">
+
+            <div class="blog-image">
+
+                <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=85"
+                     alt="Fashion Guide">
+
+            </div>
+
+            <div class="blog-info">
+
+                <span>STYLE • 02 SEP 2026</span>
+
+                <h3>
+                    How to Build a Timeless Capsule Wardrobe
+                </h3>
+
+                <a href="https://www.pakodrive.pk/blog/how-to-build-a-timeless-capsule-wardrobe">
+                    Read Article <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <article class="blog-card">
+
+            <div class="blog-image">
+
+                <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=1000&q=85"
+                     alt="Clothing Care">
+
+            </div>
+
+            <div class="blog-info">
+
+                <span>GUIDE • 28 AUG 2026</span>
+
+                <h3>
+                    Simple Tips to Make Your Clothes Last Longer
+                </h3>
+
+                <a href="https://www.reddit.com/r/Anticonsumption/comments/zbwfuq/how_to_make_clothes_last_longer/">
+                    Read Article <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     NEWSLETTER
+========================= -->
+<section class="newsletter">
+
+    <div class="newsletter-content">
+
+        <p class="eyebrow">STAY IN THE LOOP</p>
+
+        <h2>Get 10% Off Your First Order</h2>
+
+        <p>
+            Subscribe to receive new collection updates,
+            exclusive offers and fashion inspiration.
+        </p>
+
+        <form class="newsletter-form" id="newsletterForm">
+
+            <input type="email"
+                   id="newsletterEmail"
+                   placeholder="Enter your email address"
+                   required>
+
+            <button type="submit">
+                Subscribe <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </form>
+
+        <small>
+            By subscribing, you agree to our Privacy Policy.
+        </small>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+<footer class="footer">
+
+    <div class="footer-main">
+
+        <div class="footer-brand">
+
+            <a href="#" class="logo footer-logo">
+                MODA<span>.</span>
+            </a>
+
+            <p>
+                Modern fashion for modern living.
+                Discover carefully curated pieces
+                made to become your everyday favorites.
+            </p>
+
+            <div class="social-links">
+
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Shop</h3>
+
+            <a href="#">Men</a>
+            <a href="#">Women</a>
+            <a href="#">Kids</a>
+            <a href="#">New Arrivals</a>
+            <a href="#">Best Sellers</a>
+            <a href="#">Sale</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Help</h3>
+
+            <a href="#">Contact Us</a>
+            <a href="#">FAQ</a>
+            <a href="#">Shipping & Delivery</a>
+            <a href="#">Returns & Refunds</a>
+            <a href="#">Size Guide</a>
+            <a href="#">Track Order</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Company</h3>
+
+            <a href="#">About Us</a>
+            <a href="#">Our Story</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Careers</a>
+
+        </div>
+
+
+        <div class="footer-column contact-column">
+
+            <h3>Contact</h3>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                Dhaka, Bangladesh
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                +880 1XXX-XXXXXX
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                hello@moda.com
+            </p>
+
+            <div class="payment-methods">
+
+                <span>bKash</span>
+                <span>Nagad</span>
+                <span>COD</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 MODA. All Rights Reserved.
+        </p>
+
+        <p>
+            Designed for modern fashion.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     CART SIDEBAR
+========================= -->
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<aside class="cart-sidebar" id="cartSidebar">
+
+    <div class="cart-header">
+
+        <h2>Your Cart</h2>
+
+        <button id="closeCart">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+
+    <div class="cart-items" id="cartItems">
+
+        <div class="empty-cart">
+
+            <i class="fa-solid fa-bag-shopping"></i>
+
+            <h3>Your cart is empty</h3>
+
+            <p>Add some products to get started.</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="cart-footer">
+
+        <div class="cart-total">
+
+            <span>Subtotal</span>
+            <strong id="cartTotal">৳0</strong>
+
+        </div>
+
+        <button class="checkout-btn">
+            Proceed to Checkout
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =========================
+     TOAST
+========================= -->
+<div class="toast" id="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastMessage">Product added to cart</span>
+</div>
+
+
+<!-- JavaScript -->
+
+   <!-- ========================= IMAGE LIGHTBOX ========================= -->
+    <div class="product-lightbox" id="productLightbox">
+        <button id="closeLightbox" style="color: black;"><i class="fa-solid fa-xmark"></i></button>
+        <img src="" alt="Quick View" id="lightboxImage">
+    </div>
+    
+<script src="script.js"></script>
+
+</body>
+</html>

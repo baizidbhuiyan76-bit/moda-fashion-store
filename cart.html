@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shopping Cart | MODA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= ANNOUNCEMENT ================= -->
+
+    <div class="announcement-bar">
+        Free Shipping on Orders Over ৳3000
+    </div>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="header-container">
+
+            <a href="index.html" class="logo">
+                MODA
+                <span>Premium Fashion</span>
+            </a>
+
+
+            <nav class="desktop-nav">
+
+                <a href="index.html">Home</a>
+
+                <a href="shop.html">Shop</a>
+
+                <a href="shop.html?category=men">Men</a>
+
+                <a href="shop.html?category=women">Women</a>
+
+                <a href="shop.html?sort=newest">New Arrivals</a>
+
+                <a href="shop.html?sale=true">Sale</a>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+                <button class="header-icon" id="cartSearchToggle">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+
+                <a href="account.html" class="header-icon">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+
+                <a href="wishlist.html" class="header-icon">
+                    <i class="fa-regular fa-heart"></i>
+                </a>
+
+                <a href="cart.html" class="header-icon cart-icon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count">0</span>
+                </a>
+
+                <button class="mobile-menu-btn" id="cartMobileMenuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="search-area" id="cartSearchArea">
+
+            <div class="search-wrapper">
+
+                <input
+                    type="text"
+                    id="cartGlobalSearch"
+                    placeholder="Search products..."
+                >
+
+                <button id="cartGlobalSearchBtn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- MOBILE NAV -->
+
+        <nav class="mobile-nav" id="cartMobileNav">
+
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="shop.html?category=men">Men</a>
+            <a href="shop.html?category=women">Women</a>
+            <a href="shop.html?sort=newest">New Arrivals</a>
+            <a href="shop.html?sale=true">Sale</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= BREADCRUMB ================= -->
+
+    <section class="cart-breadcrumb">
+
+        <div class="container">
+
+            <a href="index.html">Home</a>
+
+            <span>/</span>
+
+            <strong>Shopping Cart</strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CART PAGE ================= -->
+
+    <main class="cart-page">
+
+        <div class="container">
+
+
+            <div class="cart-page-heading">
+
+                <div>
+
+                    <span class="cart-eyebrow">
+                        YOUR SHOPPING BAG
+                    </span>
+
+                    <h1>Shopping Cart</h1>
+
+                </div>
+
+                <a href="shop.html" class="continue-shopping">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Continue Shopping
+                </a>
+
+            </div>
+
+
+            <!-- ================= EMPTY CART ================= -->
+
+            <div class="empty-cart" id="emptyCart">
+
+                <div class="empty-cart-icon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+
+                <h2>Your cart is empty</h2>
+
+                <p>
+                    Looks like you haven't added anything to your cart yet.
+                </p>
+
+                <a href="shop.html" class="shop-empty-btn">
+                    Start Shopping
+                </a>
+
+            </div>
+
+
+            <!-- ================= CART CONTENT ================= -->
+
+            <div class="cart-layout" id="cartLayout">
+
+
+                <!-- LEFT SIDE -->
+
+                <div class="cart-products-area">
+
+                    <div class="cart-table-heading">
+
+                        <span>Product</span>
+
+                        <span>Price</span>
+
+                        <span>Quantity</span>
+
+                        <span>Total</span>
+
+                    </div>
+
+
+                    <div id="cartItems"></div>
+
+
+                    <!-- CART ACTIONS -->
+
+                    <div class="cart-actions-row">
+
+                        <button
+                            class="clear-cart-btn"
+                            id="clearCartBtn"
+                        >
+                            <i class="fa-regular fa-trash-can"></i>
+                            Clear Cart
+                        </button>
+
+                        <a
+                            href="shop.html"
+                            class="continue-shopping-bottom"
+                        >
+                            Continue Shopping
+                        </a>
+
+                    </div>
+
+
+                    <!-- TRUST BOX -->
+
+                    <div class="cart-trust-box">
+
+                        <div>
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                            <div>
+
+                                <strong>Secure Shopping</strong>
+
+                                <p>
+                                    Your information is protected.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div>
+
+                            <i class="fa-solid fa-truck"></i>
+
+                            <div>
+
+                                <strong>Fast Delivery</strong>
+
+                                <p>
+                                    Delivery within 2–5 business days.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div>
+
+                            <i class="fa-solid fa-rotate-left"></i>
+
+                            <div>
+
+                                <strong>Easy Returns</strong>
+
+                                <p>
+                                    7 days return & exchange.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT SIDE -->
+
+                <aside class="cart-summary">
+
+                    <h2>Order Summary</h2>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Subtotal
+                        </span>
+
+                        <strong id="cartSubtotal">
+                            ৳0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Shipping
+                        </span>
+
+                        <strong id="cartShipping">
+                            ৳0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-row discount-summary">
+
+                        <span>
+                            Discount
+                        </span>
+
+                        <strong id="cartDiscount">
+                            - ৳0
+                        </strong>
+
+                    </div>
+
+
+                    <!-- COUPON -->
+
+                    <div class="coupon-box">
+
+                        <label>
+                            Have a coupon?
+                        </label>
+
+                        <div class="coupon-input-row">
+
+                            <input
+                                type="text"
+                                id="couponInput"
+                                placeholder="Coupon code"
+                            >
+
+                            <button id="applyCouponBtn">
+                                Apply
+                            </button>
+
+                        </div>
+
+                        <small id="couponMessage"></small>
+
+                    </div>
+
+
+                    <div class="summary-divider"></div>
+
+
+                    <div class="summary-total">
+
+                        <span>
+                            Total
+                        </span>
+
+                        <strong id="cartTotal">
+                            ৳0
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        class="checkout-btn"
+                        id="checkoutBtn"
+                    >
+
+                        Proceed to Checkout
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+
+                    <div class="payment-note">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        Secure checkout with trusted payment methods.
+
+                    </div>
+
+
+                    <div class="payment-methods">
+
+                        <span>bKash</span>
+                        <span>Nagad</span>
+                        <span>COD</span>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= TOAST ================= -->
+
+    <div class="cart-toast" id="cartToast">
+        Cart updated successfully.
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+
+                <div class="footer-column">
+
+                    <a href="index.html" class="logo">
+                        MODA
+                        <span>Premium Fashion</span>
+                    </a>
+
+                    <p>
+                        Modern fashion for modern lifestyles.
+                        Discover premium clothing designed for
+                        confidence and comfort.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>Shop</h4>
+
+                    <a href="shop.html">All Products</a>
+                    <a href="shop.html?category=men">Men</a>
+                    <a href="shop.html?category=women">Women</a>
+                    <a href="shop.html?category=kids">Kids</a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>Help</h4>
+
+                    <a href="contact.html">Contact Us</a>
+                    <a href="about.html">About Us</a>
+                    <a href="account.html">My Account</a>
+                    <a href="wishlist.html">Wishlist</a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>Contact</h4>
+
+                    <p>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Dhaka, Bangladesh
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-phone"></i>
+                        +880 1XXXXXXXXX
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-envelope"></i>
+                        support@moda.com
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 MODA. All Rights Reserved.
+                </p>
+
+                <div>
+
+                    <a href="#">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

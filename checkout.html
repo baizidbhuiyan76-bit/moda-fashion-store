@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | MODA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="announcement-bar">
+        Free Shipping on Orders Over ৳3000
+    </div>
+
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                MODA
+                <span>Premium Fashion</span>
+            </a>
+
+            <nav class="desktop-nav">
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="shop.html?category=men">Men</a>
+                <a href="shop.html?category=women">Women</a>
+                <a href="shop.html?sort=newest">New Arrivals</a>
+                <a href="shop.html?sale=true">Sale</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="account.html" class="header-icon"><i class="fa-regular fa-user"></i></a>
+                <a href="wishlist.html" class="header-icon"><i class="fa-regular fa-heart"></i></a>
+                <a href="cart.html" class="header-icon cart-icon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="shop.html?category=men">Men</a>
+            <a href="shop.html?category=women">Women</a>
+            <a href="shop.html?sort=newest">New Arrivals</a>
+            <a href="shop.html?sale=true">Sale</a>
+        </nav>
+    </header>
+
+    <section class="checkout-breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <a href="cart.html">Cart</a>
+            <span>/</span>
+            <strong>Checkout</strong>
+        </div>
+    </section>
+
+    <main class="checkout-page">
+        <div class="container">
+            <div class="checkout-heading">
+                <span>SECURE CHECKOUT</span>
+                <h1>Complete Your Order</h1>
+                <p>Please enter your delivery information and select your preferred payment method.</p>
+            </div>
+
+            <form id="checkoutForm" class="checkout-layout">
+                <div class="checkout-main">
+                    <!-- CUSTOMER INFORMATION -->
+                    <section class="checkout-card">
+                        <div class="checkout-card-heading">
+                            <div class="checkout-number">01</div>
+                            <div>
+                                <h2>Customer Information</h2>
+                                <p>Enter your contact details</p>
+                            </div>
+                        </div>
+                        <div class="checkout-form-grid">
+                            <div class="checkout-field">
+                                <label for="customerName">Full Name <span>*</span></label>
+                                <input type="text" id="customerName" name="customerName" placeholder="Enter your full name" required>
+                                <small class="field-error"></small>
+                            </div>
+                            <div class="checkout-field">
+                                <label for="customerPhone">Phone Number <span>*</span></label>
+                                <input type="tel" id="customerPhone" name="customerPhone" placeholder="01XXXXXXXXX" required>
+                                <small class="field-error"></small>
+                            </div>
+                            <div class="checkout-field full-width">
+                                <label for="customerEmail">Email Address <span class="optional">Optional</span></label>
+                                <input type="email" id="customerEmail" name="customerEmail" placeholder="example@email.com">
+                                <small class="field-error"></small>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- DELIVERY INFORMATION -->
+                    <section class="checkout-card">
+                        <div class="checkout-card-heading">
+                            <div class="checkout-number">02</div>
+                            <div>
+                                <h2>Delivery Information</h2>
+                                <p>Where should we deliver your order?</p>
+                            </div>
+                        </div>
+                        <div class="checkout-form-grid">
+                            <div class="checkout-field">
+                                <label for="city">City <span>*</span></label>
+                                <select id="city" name="city" required>
+                                    <option value="">Select City</option>
+                                    <option value="Dhaka">Dhaka</option>
+                                    <option value="Chattogram">Chattogram</option>
+                                    <option value="Sylhet">Sylhet</option>
+                                    <option value="Rajshahi">Rajshahi</option>
+                                    <option value="Khulna">Khulna</option>
+                                    <option value="Barishal">Barishal</option>
+                                    <option value="Rangpur">Rangpur</option>
+                                    <option value="Mymensingh">Mymensingh</option>
+                                </select>
+                                <small class="field-error"></small>
+                            </div>
+                            <div class="checkout-field">
+                                <label for="area">Area / Thana <span>*</span></label>
+                                <input type="text" id="area" name="area" placeholder="Enter area / thana" required>
+                                <small class="field-error"></small>
+                            </div>
+                            <div class="checkout-field full-width">
+                                <label for="address">Full Delivery Address <span>*</span></label>
+                                <textarea id="address" name="address" rows="4" placeholder="House / Road / Apartment / Landmark" required></textarea>
+                                <small class="field-error"></small>
+                            </div>
+                            <div class="checkout-field full-width">
+                                <label for="orderNotes">Order Notes <span class="optional">Optional</span></label>
+                                <textarea id="orderNotes" name="orderNotes" rows="3" placeholder="Any special instructions for your order?"></textarea>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- DELIVERY METHOD -->
+                    <section class="checkout-card">
+                        <div class="checkout-card-heading">
+                            <div class="checkout-number">03</div>
+                            <div>
+                                <h2>Delivery Method</h2>
+                                <p>Select your preferred delivery option</p>
+                            </div>
+                        </div>
+                        <div class="delivery-methods">
+                            <label class="delivery-option active">
+                                <input type="radio" name="deliveryMethod" value="standard" checked>
+                                <div class="delivery-radio"></div>
+                                <div class="delivery-info">
+                                    <strong>Standard Delivery</strong>
+                                    <span>Delivery within 2–5 business days</span>
+                                </div>
+                                <strong class="delivery-price">৳100</strong>
+                            </label>
+                            <label class="delivery-option">
+                                <input type="radio" name="deliveryMethod" value="free">
+                                <div class="delivery-radio"></div>
+                                <div class="delivery-info">
+                                    <strong>Free Delivery</strong>
+                                    <span>Available for orders over ৳3000</span>
+                                </div>
+                                <strong class="delivery-price">FREE</strong>
+                            </label>
+                        </div>
+                    </section>
+
+                    <!-- PAYMENT -->
+                    <section class="checkout-card">
+                        <div class="checkout-card-heading">
+                            <div class="checkout-number">04</div>
+                            <div>
+                                <h2>Payment Method</h2>
+                                <p>Choose how you want to pay</p>
+                            </div>
+                        </div>
+
+                        <div class="payment-options">
+                            <!-- BKASH -->
+                            <label class="payment-option active">
+                                <input type="radio" name="paymentMethod" value="bKash" checked>
+                                <div class="payment-radio"></div>
+                                <div class="payment-icon bKash-icon">৳</div>
+                                <div>
+                                    <strong>bKash</strong>
+                                    <span>Pay securely with bKash</span>
+                                </div>
+                            </label>
+
+                            <!-- NAGAD -->
+                            <label class="payment-option">
+                                <input type="radio" name="paymentMethod" value="Nagad">
+                                <div class="payment-radio"></div>
+                                <div class="payment-icon nagad-icon">৳</div>
+                                <div>
+                                    <strong>Nagad</strong>
+                                    <span>Pay securely with Nagad</span>
+                                </div>
+                            </label>
+
+                            <!-- COD -->
+                            <label class="payment-option">
+                                <input type="radio" name="paymentMethod" value="Cash on Delivery">
+                                <div class="payment-radio"></div>
+                                <div class="payment-icon cod-icon"><i class="fa-solid fa-money-bill"></i></div>
+                                <div>
+                                    <strong>Cash on Delivery</strong>
+                                    <span>Pay when your order arrives</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="mobile-payment-info" id="mobilePaymentInfo">
+                            <p><strong>bKash:</strong> Payment instructions will be shown after placing the order.</p>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- RIGHT -->
+                <aside class="checkout-summary">
+                    <div class="checkout-summary-inner">
+                        <h2>Your Order</h2>
+                        <div class="checkout-products" id="checkoutProducts"></div>
+                        <div class="checkout-summary-divider"></div>
+                        <div class="checkout-summary-row">
+                            <span>Subtotal</span>
+                            <strong id="checkoutSubtotal">৳0</strong>
+                        </div>
+                        <div class="checkout-summary-row">
+                            <span>Shipping</span>
+                            <strong id="checkoutShipping">৳0</strong>
+                        </div>
+                        <div class="checkout-summary-row discount-row">
+                            <span>Discount</span>
+                            <strong id="checkoutDiscount">- ৳0</strong>
+                        </div>
+                        <div class="checkout-summary-divider"></div>
+                        <div class="checkout-total">
+                            <span>Total</span>
+                            <strong id="checkoutTotal">৳0</strong>
+                        </div>
+                        <button type="submit" class="place-order-btn" id="placeOrderBtn">
+                            <i class="fa-solid fa-lock"></i> Place Order
+                        </button>
+                        <div class="checkout-secure-note">
+                            <i class="fa-solid fa-shield-halved"></i> Your information is secure and protected.
+                        </div>
+                        <a href="cart.html" class="back-to-cart">
+                            <i class="fa-solid fa-arrow-left"></i> Back to Cart
+                        </a>
+                    </div>
+                </aside>
+            </form>
+        </div>
+    </main>
+
+    <div class="checkout-toast" id="checkoutToast">
+        Please complete all required fields.
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <a href="index.html" class="logo">MODA <span>Premium Fashion</span></a>
+                    <p>Modern fashion for modern lifestyles. Discover premium clothing designed for confidence and comfort.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Shop</h4>
+                    <a href="shop.html">All Products</a>
+                    <a href="shop.html?category=men">Men</a>
+                    <a href="shop.html?category=women">Women</a>
+                    <a href="shop.html?category=kids">Kids</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Help</h4>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="about.html">About Us</a>
+                    <a href="account.html">My Account</a>
+                    <a href="wishlist.html">Wishlist</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <p><i class="fa-solid fa-location-dot"></i> Dhaka, Bangladesh</p>
+                    <p><i class="fa-solid fa-phone"></i> +880 1XXXXXXXXX</p>
+                    <p><i class="fa-solid fa-envelope"></i> support@moda.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 MODA. All Rights Reserved.</p>
+                <div>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

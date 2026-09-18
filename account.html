@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account | MODA</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">MODA <span>Premium Fashion</span></a>
+            <nav class="desktop-nav">
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="shop.html?category=men">Men</a>
+                <a href="shop.html?category=women">Women</a>
+                <a href="shop.html?sale=true">Sale</a>
+            </nav>
+            <div class="header-actions">
+                <a href="account.html" class="header-icon"><i class="fa-solid fa-user"></i></a>
+                <a href="wishlist.html" class="header-icon"><i class="fa-regular fa-heart"></i></a>
+                <a href="cart.html" class="header-icon cart-icon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ACCOUNT CONTENT -->
+    <main style="min-height: 60vh; padding: 50px 20px; background: #fdfdfd;">
+        <div class="container" style="display: flex; gap: 40px; flex-wrap: wrap;">
+            
+            <!-- Sidebar -->
+            <aside style="width: 250px; background: #fff; border: 1px solid #eee; padding: 20px;">
+                <h3 style="margin-bottom: 20px; font-family: 'Playfair Display', serif;">My Account</h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 10px;"><a href="#" style="text-decoration: none; color: #111; font-weight: 600; display: block; padding: 10px; background: #f4f4f4; border-left: 3px solid #111;">Dashboard</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="text-decoration: none; color: #666; display: block; padding: 10px;">Orders</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="text-decoration: none; color: #666; display: block; padding: 10px;">Addresses</a></li>
+                    <li><a href="index.html" style="text-decoration: none; color: #ff3b30; display: block; padding: 10px;">Logout</a></li>
+                </ul>
+            </aside>
+
+            <!-- Dashboard Info -->
+            <section style="flex: 1; background: #fff; border: 1px solid #eee; padding: 30px;">
+                <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 15px;">Dashboard</h2>
+                <p style="color: #555; margin-bottom: 30px;">Hello, <strong>Customer</strong>! From your account dashboard you can view your recent orders and manage your shipping and billing addresses.</p>
+
+                <h3 style="border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">Recent Orders</h3>
+                
+                <div id="recentOrderContainer" style="background: #fafafa; padding: 20px; border-radius: 6px; border: 1px solid #eee;">
+                    <p style="color: #777;">No recent orders found.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Load last order if available
+        document.addEventListener("DOMContentLoaded", function() {
+            const lastOrder = JSON.parse(localStorage.getItem("modaLastOrder"));
+            const orderContainer = document.getElementById("recentOrderContainer");
+
+            if(lastOrder) {
+                let orderHTML = `
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <strong style="color: #111; font-size: 16px;">Order #${lastOrder.orderNumber}</strong>
+                            <p style="color: #666; font-size: 14px; margin-top: 5px;">Placed on: ${new Date(lastOrder.date).toLocaleDateString()}</p>
+                            <p style="color: #666; font-size: 14px; margin-top: 5px;">Status: <span style="color: green; font-weight: 600;">Processing</span></p>
+                        </div>
+                        <div style="text-align: right;">
+                            <strong style="font-size: 18px; color: #111;">৳${lastOrder.total.toLocaleString()}</strong>
+                            <p style="font-size: 13px; color: #666; margin-top: 5px;">via ${lastOrder.paymentMethod}</p>
+                        </div>
+                    </div>
+                `;
+                orderContainer.innerHTML = orderHTML;
+            }
+        });
+    </script>
+</body>
+</html>

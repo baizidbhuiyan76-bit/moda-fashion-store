@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wishlist | MODA</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: #fcfcfc;">
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">MODA <span>Premium Fashion</span></a>
+            <nav class="desktop-nav">
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="shop.html?category=men">Men</a>
+                <a href="shop.html?category=women">Women</a>
+                <a href="shop.html?sale=true">Sale</a>
+            </nav>
+            <div class="header-actions">
+                <a href="account.html" class="header-icon"><i class="fa-regular fa-user"></i></a>
+                <a href="wishlist.html" class="header-icon active-nav"><i class="fa-solid fa-heart"></i></a>
+                <a href="cart.html" class="header-icon cart-icon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- WISHLIST CONTENT -->
+    <main style="min-height: 70vh; padding: 60px 20px;">
+        <div class="container">
+            <h1 style="text-align: center; margin-bottom: 50px; font-family: 'Playfair Display', serif; font-size: 36px; color: #111;">My Wishlist</h1>
+            
+            <!-- Wishlist Grid -->
+            <div id="wishlistGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px;">
+                <!-- Wishlist items will load here -->
+            </div>
+
+            <!-- Empty Wishlist Message -->
+            <div id="emptyWishlist" style="display: none; text-align: center; padding: 80px 0;">
+                <i class="fa-regular fa-heart" style="font-size: 60px; color: #ddd; margin-bottom: 25px;"></i>
+                <h2 style="font-size: 28px; margin-bottom: 15px; font-family: 'Playfair Display', serif;">Your wishlist is empty</h2>
+                <p style="color: #666; margin-bottom: 30px; font-size: 16px;">Save items you love and buy them later!</p>
+                <a href="shop.html" style="background: #111; color: #fff; padding: 14px 35px; text-decoration: none; font-weight: 500; text-transform: uppercase; letter-spacing: 1px;">Explore Products</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" style="margin-top: 50px;">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2026 MODA. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const wlArray = JSON.parse(localStorage.getItem("modaWishlist")) || [];
+            const grid = document.getElementById("wishlistGrid");
+            const empty = document.getElementById("emptyWishlist");
+
+            // আপনার সম্পূর্ণ ৬০টি প্রোডাক্টের অরিজিনাল ডেটাবেস
+            const products = [
+                /* ================= MEN ================= */
+                { id: "men-01", name: "Classic Cotton T-Shirt", price: 1290, image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=85" },
+                { id: "men-02", name: "Premium Denim Jacket", price: 2990, image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=85" },
+                { id: "men-03", name: "Relaxed Fit Linen Shirt", price: 1890, image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=85" },
+                { id: "men-04", name: "Oversized Essential Tee", price: 1490, image: "https://images.unsplash.com/photo-1627225924765-552d49cf47ad?auto=format&fit=crop&w=800&q=85" },
+                { id: "men-05", name: "Premium Casual Shirt", price: 2290, image: "https://images.unsplash.com/photo-1603252110481-7ba873bf42ab?auto=format&fit=crop&w=800&q=85" },
+                { id: "men-06", name: "Classic Polo Shirt", price: 1690, image: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=800&q=85" },
+                { id: "men-07", name: "Premium Oxford Shirt", price: 2490, image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=85" },
+                { id: "men-08", name: "Slim Fit Jeans", price: 2790, image: "https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=800&q=85" },
+                { id: "men-09", name: "Relaxed Cargo Pants", price: 2390, image: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=800&q=85" },
+                { id: "men-10", name: "Premium Chino Pants", price: 2590, image: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=800&q=85" },
+                { id: "men-11", name: "Classic Panjabi", price: 2190, image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=800&q=85" },
+                { id: "men-12", name: "Premium Embroidered Panjabi", price: 3490, image: "https://images.unsplash.com/photo-1610652492500-ded49ceeb378?auto=format&fit=crop&w=800&q=85" },
+                { id: "men-13", name: "Formal Suit Jacket", price: 4500, image: "https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?auto=format&fit=crop&w=800&q=85" },
+                { id: "men-14", name: "Summer Shorts", price: 990, image: "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=800&q=85" },
+                { id: "men-15", name: "Cotton Sweatpants", price: 1390, image: "https://images.unsplash.com/photo-1584865288642-42078afe6942?auto=format&fit=crop&w=800&q=85" },
+
+                /* ================= WOMEN ================= */
+                { id: "women-01", name: "Elegant Abaya", price: 2990, image: "images/Elegant Abaya.jpg" },
+                { id: "women-02", name: "Premium Embroidered Abaya", price: 3990, image: "images/Premium Embroidered Abaya.jpg" },
+                { id: "women-03", name: "Modest Maxi Dress", price: 2790, image: "images/Modest Maxi Dress.jpg" },
+                { id: "women-04", name: "Floral Islamic Kaftan", price: 3190, image: "images/Floral Islamic Kaftan.jpg" },
+                { id: "women-05", name: "Premium Chiffon Hijab", price: 690, image: "images/Premium Chiffon Hijab.jpg" },
+                { id: "women-06", name: "Jilbab with Matching Hijab", price: 2490, image: "images/Jilbab with Matching Hijab.jpg" },
+                { id: "women-07", name: "Two-Piece Modest Co-ord Set", price: 2890, image: "images/Two-Piece Modest Co-ord Set.jpg" },
+                { id: "women-08", name: "Embroidered Long Kurti Set", price: 2690, image: "images/Embroidered Long Kurti Set.jpg" },
+                { id: "women-09", name: "Soft Silk Hijab", price: 890, image: "images/Soft Silk Hijab.jpg" },
+                { id: "women-10", name: "Casual Tunic Top", price: 1890, image: "images/Casual Tunic Top.jpg" },
+                { id: "women-11", name: "Formal Wide Leg Pants", price: 1590, image: "images/Formal Wide Leg Pants.jpg" },
+                { id: "women-12", name: "Printed Summer Dress", price: 2290, image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=800&q=85" },
+                { id: "women-13", name: "Satin Evening Gown", price: 4590, image: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=85" },
+                { id: "women-14", name: "Classic Trench Coat", price: 3490, image: "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=800&q=85" },
+                { id: "women-15", name: "Daily Wear Salwar Suit", price: 2190, image: "images/Daily Wear Salwar Suit.jpg" },
+
+                /* ================= KIDS ================= */
+                { id: "kids-01", name: "Kids Casual Outfit", price: 990, image: "https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=800&q=85" },
+                { id: "kids-02", name: "Kids Premium T-Shirt", price: 790, image: "images/Kids Premium T-Shirt.jpg" },
+                { id: "kids-03", name: "Kids Traditional Panjabi", price: 1490, image: "images/Kids Traditional Panjabi.jpg" },
+                { id: "kids-04", name: "Kids Festive Dress", price: 1790, image: "https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=800&q=85" },
+                { id: "kids-05", name: "Boys Denim Jeans", price: 1290, image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=85" },
+                { id: "kids-06", name: "Girls Floral Frock", price: 1590, image: "images/Girls Floral Frock.jpg" },
+                { id: "kids-07", name: "Kids Winter Hoodie", price: 1490, image: "images/Kids Winter Hoodie.jpg" },
+                { id: "kids-08", name: "Toddler Nightwear", price: 890, image: "images/Toddler Nightwear.jpg" },
+                { id: "kids-09", name: "Kid Boys Polo Shirt", price: 790, image: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=800&q=85" },
+                { id: "kids-10", name: "Kid Girls Summer Top", price: 690, image: "images/kid Girls Summer Top.jpg" },
+                { id: "kids-11", name: "Kids School Backpack", price: 1190, image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=85" },
+                { id: "kids-12", name: "Kids Sports Shoes", price: 1890, image: "images/Kids Sports Shoes.jpg" },
+                { id: "kids-13", name: "Baby Romper Suit", price: 590, image: "images/Baby Romper Suit.jpg" },
+                { id: "kids-14", name: "Girls Ethnic Kurti", price: 1690, image: "https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=800&q=85" },
+                { id: "kids-15", name: "Kid Boys Cargo Shorts", price: 990, image: "images/Kid Boys Cargo Shorts.jpg" },
+
+                /* ================= ACCESSORIES ================= */
+                { id: "accessories-01", name: "Classic Fashion Bag", price: 1290, image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=85" },
+                { id: "accessories-02", name: "Minimal Sunglasses", price: 890, image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=85" },
+                { id: "accessories-03", name: "Premium Leather Wallet", price: 1190, image: "https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=800&q=85" },
+                { id: "accessories-04", name: "Classic Leather Belt", price: 990, image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=85" },
+                { id: "accessories-05", name: "Men's Classic Watch", price: 3490, image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=800&q=85" },
+                { id: "accessories-06", name: "Women's Pearl Necklace", price: 1590, image: "images/Women's Pearl Necklace.jpg" },
+                { id: "accessories-07", name: "Unisex Canvas Cap", price: 490, image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=800&q=85" },
+                { id: "accessories-08", name: "Leather Crossbody Bag", price: 2190, image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=85" },
+                { id: "accessories-09", name: "Formal Silk Tie", price: 790, image: "images/Formal Silk Tie.jpg" },
+                { id: "accessories-10", name: "Stylish Hairband Set", price: 390, image: "images/Stylish Hairband Set.jpg" },
+                { id: "accessories-11", name: "Silver Bracelet", price: 1490, image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=800&q=85" },
+                { id: "accessories-12", name: "Aviator Sunglasses", price: 1290, image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=85" },
+                { id: "accessories-13", name: "Travel Backpack", price: 2890, image: "images/Travel Backpack.jpg" },
+                { id: "accessories-14", name: "Woolen Scarf", price: 690, image: "images/Woolen Scarf.jpg" },
+                { id: "accessories-15", name: "Gold Plated Earrings", price: 890, image: "images/Gold Plated Earrings.jpg" }
+            ];
+
+            // ডাটাবেস থেকে প্রোডাক্ট খোঁজার ফাংশন
+            function getProductDetails(id) {
+                // প্রোডাক্ট আইডি অথবা নাম দিয়ে খুঁজবে
+                let foundProduct = products.find(p => p.id === id || p.name === id);
+                
+                if (foundProduct) {
+                    return { 
+                        name: foundProduct.name, 
+                        price: foundProduct.price.toLocaleString(), 
+                        img: foundProduct.image 
+                    };
+                }
+                
+                // যদি কোনো প্রোডাক্ট ডিলিট হয়ে যায়, তখন এই ডিফল্ট ইমেজ দেখাবে
+                return { 
+                    name: id.replace("-", " ").toUpperCase(), 
+                    price: "N/A", 
+                    img: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=800&q=85" 
+                };
+            }
+
+            if(wlArray.length === 0) {
+                grid.style.display = "none";
+                empty.style.display = "block";
+            } else {
+                wlArray.forEach(itemName => {
+                    let product = getProductDetails(itemName);
+                    
+                    grid.innerHTML += `
+                    <div style="background: #fff; border: 1px solid #eaeaea; border-radius: 8px; overflow: hidden; text-align: center; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                        <div style="position: relative; height: 320px; overflow: hidden;">
+                            <img src="${product.img}" alt="${product.name}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                        </div>
+                        <div style="padding: 25px 20px;">
+                            <h3 style="font-size: 16px; margin-bottom: 10px; color: #222; font-weight: 600; font-family: 'DM Sans', sans-serif;">${product.name}</h3>
+                            <p style="color: #666; font-weight: 500; margin-bottom: 20px; font-size: 15px;">৳${product.price}</p>
+                            <button class="remove-wl-btn" data-name="${itemName}" style="background: white; border: 1px solid #ddd; color: #ff3b30; padding: 10px 20px; border-radius: 4px; cursor: pointer; transition: 0.3s; font-weight: 600; width: 100%; text-transform: uppercase; font-size: 13px; letter-spacing: 0.5px;">
+                                <i class="fa-solid fa-trash-can" style="margin-right: 5px;"></i> Remove
+                            </button>
+                        </div>
+                    </div>`;
+                });
+
+                // Remove Button
+                document.querySelectorAll(".remove-wl-btn").forEach(btn => {
+                    btn.addEventListener("click", function() {
+                        let name = this.dataset.name;
+                        let currentWl = JSON.parse(localStorage.getItem("modaWishlist")) || [];
+                        currentWl = currentWl.filter(item => item !== name);
+                        localStorage.setItem("modaWishlist", JSON.stringify(currentWl));
+                        
+                        if(document.querySelector(".wishlist-count")) {
+                            document.querySelector(".wishlist-count").textContent = currentWl.length;
+                        }
+                        location.reload(); 
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
