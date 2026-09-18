@@ -1912,12 +1912,11 @@ button {
    FIXED FILTER SIDEBAR & SCROLL
 ========================================= */
 .filter-sidebar {
-    position: sticky;
-    top: 30px;
+    position: relative !important;
     background: #fff;
-    max-height: calc(100vh - 100px);
-    overflow-y: auto;
-    padding-right: 10px;
+    padding: 20px;
+    height: fit-content;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
 }
 
 /* স্ক্রোলবারটিকে সুন্দর ও চিকন করার জন্য */
