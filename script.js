@@ -460,7 +460,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { id: "kids-12", category: "kids", name: "Kids Sports Shoes", price: 1890, rating: 4.7, reviews: 28, date: 1, image: "images/Kids Sports Shoes.jpg" },
         { id: "kids-13", category: "kids", name: "Baby Romper Suit", price: 590, rating: 4.9, reviews: 55, date: 20, badge: "BEST SELLER", image: "images/Baby Romper Suit.jpg" },
         { id: "kids-14", category: "kids", name: "Girls Ethnic Kurti", price: 1690, rating: 4.6, reviews: 15, date: 19, image: "https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=800&q=85" },
-        { id: "kids-15", category: "kids", name: "Kid Boys Cargo Shorts", price: 990, rating: 4.5, reviews: 12, date: 18, image: "images/Kid Boys Cargo Shorts.jpg" },
+        { id: "kids-15", category: "kids", name: "Kid Boys Cargo Shorts", price: 990, rating: 4.5, reviews: 12, date: 18, image: "images/kid Boys Cargo Shorts.jpg" },
 
         /* ACCESSORIES */
         { id: "accessories-01", category: "accessories", name: "Classic Fashion Bag", price: 1290, rating: 4.7, reviews: 17, date: 12, image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=85" },
