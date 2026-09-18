@@ -1912,13 +1912,9 @@ button {
 --------------------------------------------------------- */
 
 .filter-sidebar {
-    position: sticky;
-
-    top: 30px;
-
-    background: #fff;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
 }
-
 
 .filter-header {
     display: flex;
