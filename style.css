@@ -1908,14 +1908,26 @@ button {
 
 
 
-/* FILTER SIDEBAR
---------------------------------------------------------- */
-
+/* =========================================
+   FIXED FILTER SIDEBAR & SCROLL
+========================================= */
 .filter-sidebar {
-    max-height: calc(100vh - 60px);
+    position: sticky;
+    top: 30px;
+    background: #fff;
+    max-height: calc(100vh - 100px);
     overflow-y: auto;
+    padding-right: 10px;
 }
 
+/* স্ক্রোলবারটিকে সুন্দর ও চিকন করার জন্য */
+.filter-sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+.filter-sidebar::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 10px;
+}
 .filter-header {
     display: flex;
 
